@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SistemaMecanica.Views.InicioPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Encabezado -->
+            <Frame BackgroundColor="#f0e078" Padding="24" CornerRadius="0" Margin="0,0,0,20">
+                <Label Text="Mecanica MTCAR" HorizontalTextAlignment="Center" TextColor="Black" FontSize="30"/>
+            </Frame>
+
+            <!-- Contenido principal -->
+            <Grid Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Título -->
+                <Label Text="Bienvenido" FontSize="24" FontAttributes="Bold"
+                       HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                       Grid.Row="0"/>
+
+                <!-- Separador -->
+                <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"
+                         Grid.Row="1" Margin="0,10,0,10"/>
+
+                <!-- Imagen -->
+                <Image Source="IconMecanica.png"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="Center"
+                       Grid.Row="2"
+                       WidthRequest="300"
+                       HeightRequest="300"/>
+
+                <!-- Formulario de Login -->
+                <StackLayout Grid.Row="3" BackgroundColor="#f0f0f0" Padding="10" Spacing="10">
+                    <Entry Placeholder="Correo" x:Name="email" Keyboard="Email"/>
+                    <Entry Placeholder="Contraseña" x:Name="password" IsPassword="True"/>
+                    <Button x:Name="btnLogin" Text="Inicia sesión" Clicked="btnLogin_Clicked"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
