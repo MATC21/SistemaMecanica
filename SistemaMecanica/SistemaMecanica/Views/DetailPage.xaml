@@ -3,18 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SistemaMecanica.Views.DetailPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Frame BackgroundColor="#F71937" Padding="24" CornerRadius="0" Margin="0,0,0,20">
+        <StackLayout Spacing="20" Padding="20">
+            <!-- Encabezado -->
+            <Frame BackgroundColor="#e38c64" Padding="24" CornerRadius="0" Margin="0,0,0,20">
                 <Label Text="SISTEMA DE GESTION MECANICA" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
             </Frame>
-            
-            <StackLayout>
-                <Image Source="IconMecanica.png"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand"/>
-                <Label Text="Visita Nuestra Pagina"/>
-            </StackLayout>
-            
+
+            <!-- Contenido principal -->
+            <Grid HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Imagen redonda -->
+                <Frame BackgroundColor="White" CornerRadius="100" Padding="10" HeightRequest="300" WidthRequest="400" HorizontalOptions="Center" Margin="0,0,0,30">
+                    <Image Source="IconInicio.png" Aspect="AspectFit" />
+                </Frame>
+
+                <!-- Espacio entre la imagen y el botón -->
+                <BoxView Grid.Row="1" HeightRequest="30" Color="Transparent" />
+
+                <!-- Botón personalizado -->
+                <Button Grid.Row="1" Text="Comenzar" 
+                        BackgroundColor="Black" TextColor="White" 
+                        CornerRadius="10" WidthRequest="200" HeightRequest="50" 
+                        HorizontalOptions="Center"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
