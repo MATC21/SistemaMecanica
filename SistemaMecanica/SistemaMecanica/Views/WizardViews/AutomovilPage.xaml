@@ -1,35 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SistemaMecanica.Views.PartailViews.AddClientePage">
+             x:Class="SistemaMecanica.Views.WizardViews.AutomovilPage">
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="20">
             <!-- Encabezado -->
             <Frame BackgroundColor="#64346c" Padding="24" CornerRadius="0" Margin="0,0,0,20">
-                <Label Text="AGREGAR CLIENTE" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+                <Label Text="INFORMACIÓN DEL AUTOMÓVIL" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
             </Frame>
 
             <!-- Contenido principal -->
             <StackLayout HorizontalOptions="CenterAndExpand" Spacing="20">
                 <!-- Imagen redonda -->
                 <Frame BackgroundColor="White" CornerRadius="100" Padding="10" HeightRequest="100" WidthRequest="200" HorizontalOptions="Center" Margin="0,0,0,20">
-                    <Image Source="IconAddCliente.png" Aspect="AspectFit" />
+                    <Image Source="IconProceso.png" Aspect="AspectFit" />
                 </Frame>
 
-                <!-- Formulario de Cliente -->
+                <!-- Formulario de Automóvil -->
                 <StackLayout BackgroundColor="#f0f0f0" Padding="10" Spacing="10" WidthRequest="400">
-                    <Entry Placeholder="Cédula" x:Name="cedula" Keyboard="Text"/>
-                    <Entry Placeholder="Nombres" x:Name="nombres" Keyboard="Text"/>
-                    <Entry Placeholder="Apellidos" x:Name="apellidos" Keyboard="Text"/>
-                    <Entry Placeholder="Teléfono" x:Name="telefono" Keyboard="Text"/>
-                    <Entry Placeholder="Ubicación" x:Name="ubicacion" Keyboard="Text"/>
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Entry Placeholder="Placa" x:Name="placaEntry" Keyboard="Text" HorizontalOptions="FillAndExpand"/>
+                        <Button x:Name="cargarPlaca" Text="Cargar" Clicked="cargarCliente_Clicked"/>
+                    </StackLayout>
+                    <Entry Placeholder="Marca" x:Name="marca" Keyboard="Text"/>
+                    <Entry Placeholder="Modelo" x:Name="modelo" Keyboard="Text"/>
+                    <Entry Placeholder="Año" x:Name="año" Keyboard="Text"/>
                 </StackLayout>
 
                 <!-- Espacio entre el formulario y el botón -->
                 <BoxView HeightRequest="20" Color="Transparent" />
 
                 <!-- Botón personalizado -->
-                <Button Text="GUARDAR" x:Name="btnGuardar" Clicked="btnGuardar_Clicked"
+                <Button Text="SIGUIENTE" x:Name="btnSiguiente" Clicked="btnSiguiente_Clicked"
                         BackgroundColor="#64346c" TextColor="White" 
                         CornerRadius="10" WidthRequest="200" HeightRequest="50" 
                         HorizontalOptions="Center"/>

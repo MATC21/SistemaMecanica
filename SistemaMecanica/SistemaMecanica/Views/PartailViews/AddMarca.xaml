@@ -1,28 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SistemaMecanica.Views.PartailViews.AddClientePage">
+             x:Class="SistemaMecanica.Views.PartailViews.AddMarca">
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="20">
             <!-- Encabezado -->
             <Frame BackgroundColor="#64346c" Padding="24" CornerRadius="0" Margin="0,0,0,20">
-                <Label Text="AGREGAR CLIENTE" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+                <Label Text="NUEVA MARCA" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
             </Frame>
 
             <!-- Contenido principal -->
             <StackLayout HorizontalOptions="CenterAndExpand" Spacing="20">
-                <!-- Imagen redonda -->
-                <Frame BackgroundColor="White" CornerRadius="100" Padding="10" HeightRequest="100" WidthRequest="200" HorizontalOptions="Center" Margin="0,0,0,20">
-                    <Image Source="IconAddCliente.png" Aspect="AspectFit" />
-                </Frame>
-
-                <!-- Formulario de Cliente -->
+                <!-- Formulario de Vehículo -->
                 <StackLayout BackgroundColor="#f0f0f0" Padding="10" Spacing="10" WidthRequest="400">
-                    <Entry Placeholder="Cédula" x:Name="cedula" Keyboard="Text"/>
-                    <Entry Placeholder="Nombres" x:Name="nombres" Keyboard="Text"/>
-                    <Entry Placeholder="Apellidos" x:Name="apellidos" Keyboard="Text"/>
-                    <Entry Placeholder="Teléfono" x:Name="telefono" Keyboard="Text"/>
-                    <Entry Placeholder="Ubicación" x:Name="ubicacion" Keyboard="Text"/>
+                    <Entry Placeholder="Marca" x:Name="marca" Keyboard="Text"/>
                 </StackLayout>
 
                 <!-- Espacio entre el formulario y el botón -->

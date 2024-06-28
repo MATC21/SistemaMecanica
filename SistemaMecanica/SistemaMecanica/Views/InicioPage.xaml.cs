@@ -49,7 +49,7 @@ namespace SistemaMecanica.Views
             }
             catch (Exception ex)
             {
-                await App.Current.MainPage.DisplayAlert("Alert", ex.Message, "Ok");
+                await App.Current.MainPage.DisplayAlert("Error", "Usuario No Valido", "Ok");
             }
 
         }

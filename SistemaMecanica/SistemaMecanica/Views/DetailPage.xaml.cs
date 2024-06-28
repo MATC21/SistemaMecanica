@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaMecanica.Views.WizardViews;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace SistemaMecanica.Views
         public DetailPage()
         {
             InitializeComponent();
+        }
+
+        private async void btnComenzar_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ClientePage());
         }
     }
 }

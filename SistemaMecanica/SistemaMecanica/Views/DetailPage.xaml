@@ -28,7 +28,7 @@
                 <Button Grid.Row="1" Text="Comenzar" 
                         BackgroundColor="Black" TextColor="White" 
                         CornerRadius="10" WidthRequest="200" HeightRequest="50" 
-                        HorizontalOptions="Center"/>
+                        HorizontalOptions="Center" Clicked="btnComenzar_Clicked"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

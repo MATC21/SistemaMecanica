@@ -30,5 +30,28 @@ namespace SistemaMecanica.Views
             await App.MasterDet.Detail.Navigation.PushAsync(new AddClientePage());
         }
 
+        private async void btnAgregarVehículo_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new AddVehiculo());
+        }
+
+        private async void btnAgregarMarca_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new AddMarca());
+        }
+
+        private async void btnAgregarModelo_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new AddModelo());
+        }
+
+        private async void btnAgregarTarea_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new AddTarea());
+        }
     }
 }

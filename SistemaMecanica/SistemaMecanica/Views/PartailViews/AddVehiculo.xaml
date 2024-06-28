@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SistemaMecanica.Views.PartailViews.AddVehiculo">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="20">
+            <!-- Encabezado -->
+            <Frame BackgroundColor="#64346c" Padding="24" CornerRadius="0" Margin="0,0,0,20">
+                <Label Text="AÑADIR AUTOMÓVIL" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+            </Frame>
+
+            <!-- Formulario de Automóvil -->
+            <StackLayout BackgroundColor="#f0f0f0" Padding="10" Spacing="10" WidthRequest="400">
+                <Entry Placeholder="Placa" x:Name="placaEntry" Keyboard="Text"/>
+                <Entry Placeholder="Kilometraje" x:Name="kilometrajeEntry" Keyboard="Numeric"/>
+                <Picker x:Name="marcaPicker" Title="Selecciona una Marca" SelectedIndexChanged="marcaPicker_SelectedIndexChanged" />
+                <Picker x:Name="modeloPicker" Title="Selecciona un Modelo" SelectedIndexChanged="modeloPicker_SelectedIndexChanged" />
+                <Entry Placeholder="Año" x:Name="anioEntry" Keyboard="Numeric"/>
+                <Picker x:Name="clientePicker" Title="Selecciona un Cliente" SelectedIndexChanged="clientePicker_SelectedIndexChanged" />
+            </StackLayout>
+
+            <!-- Espacio entre el formulario y el botón -->
+            <BoxView HeightRequest="20" Color="Transparent" />
+
+            <!-- Botón personalizado -->
+            <Button Text="GUARDAR" x:Name="btnGuardar" Clicked="btnGuardar_Clicked"
+                        BackgroundColor="#64346c" TextColor="White" 
+                        CornerRadius="10" WidthRequest="200" HeightRequest="50" 
+                        HorizontalOptions="Center"/>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

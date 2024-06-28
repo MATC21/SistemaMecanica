@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SistemaMecanica.Views.WizardViews.DetallePage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="15">
+
+                <!-- Encabezado -->
+                <Frame BackgroundColor="#64346c" Padding="20" CornerRadius="10" Margin="0,0,0,20">
+                    <Label Text="DETALLE DEL AUTOMÓVIL" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+                </Frame>
+
+                <!-- Imagen del automóvil -->
+                <Frame BackgroundColor="White" CornerRadius="100" Padding="10" HeightRequest="150" WidthRequest="200" HorizontalOptions="Center" Margin="0,0,0,20">
+                    <Image Source="IconPago.png" Aspect="AspectFit" HeightRequest="200" HorizontalOptions="CenterAndExpand" />
+                </Frame>
+                <!-- Datos del cliente -->
+                <Label Text="Cliente:" FontSize="20" FontAttributes="Bold" Margin="0,20,0,10"/>
+                <StackLayout Spacing="10">
+                    <Label Text="Nombre:" />
+                    <Entry x:Name="nombreEntry" Placeholder="Nombre del cliente" />
+                    <Label Text="Apellido:" />
+                    <Entry x:Name="apellidoEntry" Placeholder="Apellido del cliente" />
+                    <Label Text="Cédula:" />
+                    <Entry x:Name="cedulaEntry" Placeholder="Cédula del cliente" />
+                </StackLayout>
+
+                <!-- Datos del automóvil -->
+                <Label Text="Automóvil:" FontSize="20" FontAttributes="Bold" Margin="0,20,0,10"/>
+                <StackLayout Spacing="10">
+                    <Label Text="Placa:" />
+                    <Entry x:Name="placaEntry" Placeholder="Placa del automóvil" />
+                </StackLayout>
+
+                <!-- Lista de tareas o reparaciones -->
+                <Label Text="Lista de tareas:" FontSize="20" FontAttributes="Bold" Margin="0,20,0,10"/>
+                <ListView x:Name="tareasListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <!-- Define cómo se muestra cada elemento de la lista -->
+                                <StackLayout>
+                                    <Label Text="{Binding Descripcion}" />
+                                    <!-- Agrega más controles según las propiedades de Tarea -->
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <!-- Botón personalizado -->
+                <Button Text="TERMINAR" x:Name="btnTerminar" Clicked="btnTerminar_Clicked"
+                        BackgroundColor="#64346c" TextColor="White" 
+                        CornerRadius="10" WidthRequest="200" HeightRequest="50" 
+                        HorizontalOptions="Center"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

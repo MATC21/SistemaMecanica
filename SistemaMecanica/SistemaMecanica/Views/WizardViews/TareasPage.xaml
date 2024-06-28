@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SistemaMecanica.Views.WizardViews.TareasPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="20">
+            <!-- Encabezado -->
+            <Frame BackgroundColor="#64346c" Padding="24" CornerRadius="0" Margin="0,0,0,20">
+                <Label Text="ARREGLOS DEL AUTOMÓVIL" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+            </Frame>
+
+            <!-- Contenido principal -->
+            <StackLayout HorizontalOptions="CenterAndExpand" Spacing="20">
+                <!-- Imagen redonda -->
+                <Frame BackgroundColor="White" CornerRadius="100" Padding="10" HeightRequest="600" WidthRequest="200" HorizontalOptions="Center" Margin="0,0,0,20">
+                    <Image Source="IconReparacion.png" Aspect="AspectFit" />
+                </Frame>
+
+                <!-- Formulario de Automóvil -->
+                <StackLayout BackgroundColor="#f0f0f0" Padding="10" Spacing="10" WidthRequest="400">
+                    <Picker x:Name="marcaPicker" Title="Selecciona una Tarea" SelectedIndexChanged="marcaPicker_SelectedIndexChanged" />
+                </StackLayout>
+
+                <!-- Lista de Tareas Seleccionadas -->
+                <Frame BackgroundColor="#f0f0f0" CornerRadius="10" Padding="10" HasShadow="True" Margin="0,20">
+                    <ListView x:Name="tareasListView" Margin="10" SeparatorVisibility="Default" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame BackgroundColor="White" CornerRadius="10" Padding="10" Margin="5">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                                <Label Text="{Binding Descripcion}" FontSize="Medium" TextColor="#333333"/>
+                                                <Label Text="{Binding KilometrajeProximoCambio, StringFormat='Próximo cambio: {0} km'}" FontSize="Small" TextColor="#666666"/>
+                                            </StackLayout>
+                                            <Button Text="Eliminar" BackgroundColor="#ff4d4d" TextColor="White" Clicked="EliminarTarea_Clicked"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+
+                <!-- Espacio entre el formulario y el botón -->
+                <BoxView HeightRequest="5" Color="Transparent" />
+
+                <!-- Botón personalizado -->
+                <Button Text="CONTINUAR" x:Name="btnTerminar" Clicked="btnTerminar_Clicked"
+                        BackgroundColor="#64346c" TextColor="White" 
+                        CornerRadius="10" WidthRequest="200" HeightRequest="50" 
+                        HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
